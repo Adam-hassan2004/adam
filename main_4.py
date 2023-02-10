@@ -11,8 +11,15 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 mycursor.execute("SELECT * FROM customers")
-
 myresult = mycursor.fetchall()
 
 for x in myresult:
   print(x)
+  
+ #mostro solo un dato dalla tabella
+
+mycursor.execute("SELECT * FROM customers")
+
+myresult = mycursor.fetchone()
+
+print(myresult)
